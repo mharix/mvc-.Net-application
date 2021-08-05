@@ -1,0 +1,97 @@
+﻿
+@model PagedList.IPagedList<clinic_management_by_haris.Models.tbl_inventory>
+@using PagedList;
+@using PagedList.Mvc
+
+
+
+
+@{
+   
+    ViewBag.Title = "Machines";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="breadcrumbs">
+    <div class="container">
+        <ul>
+            <li><a href="@Url.Action("Home","Home")">Home</a></li>
+            <li>Product results</li>
+        </ul>
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->
+<div id="body">
+    <div class="container">
+        <div class="products-wrap">
+            <aside id="sidebar">
+                <div class="widget">
+                    <h3><a href="#" style="color:white">All Machins</a></h3>
+                </div>
+            </aside>
+            <div id="content">
+                @*Html.BeginForm run the HOME controller InvoiceList Action's GET method when form get submitted.*@
+                @using (Html.BeginForm("Machine", "Home", FormMethod.Get, new { id = "form1" }))
+
+                {
+                    <div id='Paging' style="text-align: center">
+                        @*Dorpdownlist generation code*@
+                        Nos. of Productss on page @Html.DropDownList("pageSize")
+
+                        <br />
+                        <br />
+                        <br />
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+                        of @Model.PageCount
+
+                        @Html.PagedListPager(Model, page => Url.Action("Machine", new { page, pageSize = ViewBag.psize }))
+                    </div>
+                }
+
+                <section class="products">
+                    @foreach (var item in Model.OrderByDescending(item => item.id))
+                    {
+                        DateTime today = DateTime.Now;
+                        DateTime productDate = DateTime.Parse(item.idate.ToString());
+
+                        if (DateTime.Compare(productDate, today) > 0 && item.quantity > 0 && item.tbl_products.ptype ==  "apparatus")
+                        {
+                            <article style="height: 255px;"> 
+                                <a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})"><img  alt="image" src="~/productImages/@item.tbl_products.pimage" alt="" height="100px" width="100px"></a>
+                                <h2><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">@item.tbl_products.pname</a></h2>
+                                <h6><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">Rs @item.tbl_products.price</a></h6>
+                                <a href="@Url.Action("AddToCart", "Order",new { id=@item.id,qty=1})" class="btn-add">Add to cart</a>
+                            </article>
+                        }
+                    }
+
+                </section>
+            </div>
+            <!-- / content -->
+        </div>
+        <div class="pager">
+
+
+        </div>
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#pageSize").change(function () {
+
+            $("#form1").submit();
+        });
+    });
+</script> 

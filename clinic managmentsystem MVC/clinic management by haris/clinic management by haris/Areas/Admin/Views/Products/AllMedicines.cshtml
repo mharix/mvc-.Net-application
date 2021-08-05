@@ -1,0 +1,73 @@
+﻿@model IEnumerable<clinic_management_by_haris.Models.tbl_products>
+
+@{
+    ViewBag.Title = "AllMedicines";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AllMedicines</h2>
+
+<table class="table">
+    <tr>
+        <th>
+         Name
+        </th>
+        <th>
+           Type
+        </th>
+        <th>
+           Price
+        </th>
+        <th>
+          Cost
+        </th>
+        <th>
+           Code
+        </th>
+        <th>
+           Weight
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+           Image
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ptype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pweight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pdescription)
+        </td>
+        <td>
+            <img  alt="image" src="~/productImages/@item.pimage" height="50" width="50" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditMedicine", new { id=item.pid }) |
+            @Html.ActionLink("Delete", "DeleteMedicine", new { id=item.pid })
+           
+        </td>
+    </tr>
+}
+
+</table>

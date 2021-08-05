@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="harispharmacyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_clientLogin">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="caddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_orders" Relationship="Self.FK__tbl_orders__cid__1BFD2C07" FromRole="tbl_clientLogin" ToRole="tbl_orders" />
+    <Property Name="pass" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_feedback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="comments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="idate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_products" Relationship="Self.FK__tbl_invento__pid__182C9B23" FromRole="tbl_inventory" ToRole="tbl_products" />
+    <NavigationProperty Name="tbl_cart" Relationship="harispharmacyModel.FK__tbl_cart__invent__44FF419A" FromRole="tbl_inventory" ToRole="tbl_cart" />
+    <NavigationProperty Name="tbl_orders" Relationship="harispharmacyModel.FK__tbl_order__inven__4F7CD00D" FromRole="tbl_inventory" ToRole="tbl_orders" />
+  </EntityType>
+  <EntityType Name="tbl_orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="cid" Type="Int32" />
+    <Property Name="orderdate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_clientLogin" Relationship="Self.FK__tbl_orders__cid__1BFD2C07" FromRole="tbl_orders" ToRole="tbl_clientLogin" />
+    <NavigationProperty Name="tbl_products" Relationship="Self.FK__tbl_orders__pid__1B0907CE" FromRole="tbl_orders" ToRole="tbl_products" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="inventoryid" Type="Int32" />
+    <NavigationProperty Name="tbl_inventory" Relationship="harispharmacyModel.FK__tbl_order__inven__4F7CD00D" FromRole="tbl_orders" ToRole="tbl_inventory" />
+  </EntityType>
+  <EntityType Name="tbl_products">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ptype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Int32" />
+    <Property Name="cost" Type="Int32" />
+    <Property Name="pcode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="pweight" Type="Int32" />
+    <Property Name="pdescription" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="pimage" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_inventory" Relationship="Self.FK__tbl_invento__pid__182C9B23" FromRole="tbl_products" ToRole="tbl_inventory" />
+    <NavigationProperty Name="tbl_orders" Relationship="Self.FK__tbl_orders__pid__1B0907CE" FromRole="tbl_products" ToRole="tbl_orders" />
+  </EntityType>
+  <Association Name="FK__tbl_orders__cid__1BFD2C07">
+    <End Role="tbl_clientLogin" Type="Self.tbl_clientLogin" Multiplicity="0..1" />
+    <End Role="tbl_orders" Type="Self.tbl_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_clientLogin">
+        <PropertyRef Name="cid" />
+      </Principal>
+      <Dependent Role="tbl_orders">
+        <PropertyRef Name="cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_invento__pid__182C9B23">
+    <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="0..1" />
+    <End Role="tbl_inventory" Type="Self.tbl_inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_products">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="tbl_inventory">
+        <PropertyRef Name="pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_orders__pid__1B0907CE">
+    <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="0..1" />
+    <End Role="tbl_orders" Type="Self.tbl_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_products">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="tbl_orders">
+        <PropertyRef Name="pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="harispharmacyEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tbl_clientLogin" EntityType="Self.tbl_clientLogin" />
+    <EntitySet Name="tbl_feedback" EntityType="Self.tbl_feedback" />
+    <EntitySet Name="tbl_inventory" EntityType="Self.tbl_inventory" />
+    <EntitySet Name="tbl_orders" EntityType="Self.tbl_orders" />
+    <EntitySet Name="tbl_products" EntityType="Self.tbl_products" />
+    <AssociationSet Name="FK__tbl_orders__cid__1BFD2C07" Association="Self.FK__tbl_orders__cid__1BFD2C07">
+      <End Role="tbl_clientLogin" EntitySet="tbl_clientLogin" />
+      <End Role="tbl_orders" EntitySet="tbl_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_invento__pid__182C9B23" Association="Self.FK__tbl_invento__pid__182C9B23">
+      <End Role="tbl_products" EntitySet="tbl_products" />
+      <End Role="tbl_inventory" EntitySet="tbl_inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_orders__pid__1B0907CE" Association="Self.FK__tbl_orders__pid__1B0907CE">
+      <End Role="tbl_products" EntitySet="tbl_products" />
+      <End Role="tbl_orders" EntitySet="tbl_orders" />
+    </AssociationSet>
+    <EntitySet Name="tbl_cart" EntityType="harispharmacyModel.tbl_cart" />
+    <AssociationSet Name="FK__tbl_cart__invent__44FF419A" Association="harispharmacyModel.FK__tbl_cart__invent__44FF419A">
+      <End Role="tbl_inventory" EntitySet="tbl_inventory" />
+      <End Role="tbl_cart" EntitySet="tbl_cart" />
+    </AssociationSet>
+    <EntitySet Name="emps" EntityType="harispharmacyModel.emp" />
+    <AssociationSet Name="FK__tbl_order__inven__4F7CD00D" Association="harispharmacyModel.FK__tbl_order__inven__4F7CD00D">
+      <End Role="tbl_inventory" EntitySet="tbl_inventory" />
+      <End Role="tbl_orders" EntitySet="tbl_orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inventoryid" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <NavigationProperty Name="tbl_inventory" Relationship="harispharmacyModel.FK__tbl_cart__invent__44FF419A" FromRole="tbl_cart" ToRole="tbl_inventory" />
+  </EntityType>
+  <Association Name="FK__tbl_cart__invent__44FF419A">
+    <End Type="harispharmacyModel.tbl_inventory" Role="tbl_inventory" Multiplicity="0..1" />
+    <End Type="harispharmacyModel.tbl_cart" Role="tbl_cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_inventory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_cart">
+        <PropertyRef Name="inventoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="emp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__tbl_order__inven__4F7CD00D">
+    <End Type="harispharmacyModel.tbl_inventory" Role="tbl_inventory" Multiplicity="0..1" />
+    <End Type="harispharmacyModel.tbl_orders" Role="tbl_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_inventory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_orders">
+        <PropertyRef Name="inventoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

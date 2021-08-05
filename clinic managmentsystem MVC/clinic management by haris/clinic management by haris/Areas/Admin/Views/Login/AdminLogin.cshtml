@@ -1,0 +1,52 @@
+﻿@model clinic_management_by_haris.Models.tbl_clientLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Areas/Admin/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="~/Areas/Admin/sbadmin/css/sb-admin.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminLogin</title>
+</head>
+<body>
+  
+@using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="username" required="required" autofocus="autofocus">
+                            <label for="inputEmail">email</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
+                            <label for="inputPassword">password</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                        </div>
+                    </div>
+                   
+                </form>
+
+            </div>
+        </div>
+    </div>
+}
+</body>
+</html>

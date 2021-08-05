@@ -1,0 +1,124 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+ <!--<![endif]-->
+<head>
+    <link rel="stylesheet" id="elementor-pro-css" href="https://medicalstore.com.pk/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.7.3" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-frontend-css" href="https://medicalstore.com.pk/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.7.5" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-global-css" href="https://medicalstore.com.pk/wp-content/uploads/elementor/css/global.css?ver=1573911957" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-137453-css" href="https://medicalstore.com.pk/wp-content/uploads/elementor/css/post-137453.css?ver=1576371884" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="https://medicalstore.com.pk/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.9.0" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="https://medicalstore.com.pk/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.9.0" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="~/template/form/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="~/template/form/css/main.css">
+
+    <meta charset="utf-8">
+    <title>Clinic Pharmacy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" media="all" href="~/css/style.css">
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="@Url.Action("Home", "Home")" id="logo" title="Providence Clinic">Providence Clinic</a>
+            <div class="right-links">
+                <ul>
+                    <li><a href="@Url.Action("ShowCart", "Order")"><span class="ico-products"></span>Cart</a></li>
+                    
+                   @{  Session["aname"]="user".ToString();
+                       if (Session["cname"] != null && Session["cid"] != null)
+                       {
+                        <li><a href="#"><span class="ico-account"></span>@Session["cname"].ToString()</a></li>
+                        <li><a href="@Url.Action("Logout", "Home")"><span class="ico-signout"></span>Sign out</a></li>
+                       }
+                       else {
+                        <li><a href="@Url.Action("ClientRegister", "Home")"><span class="ico-account"></span>Register</a></li>
+                    <li><a href="@Url.Action("ClientLogin", "Home")"><span class="ico-signout"></span>Sign in</a></li>}
+
+                      
+                }
+                    <li><a href="@Url.Action("Index", "Admin/Dashboard")"><span class="ico-account"></span>Admin Panel</a></li>
+                       
+                </ul>
+            </div>
+        </div>
+        <!-- / container -->
+    </header>
+    <!-- / header -->
+    <nav id="menu">
+        <div class="container">
+            <div class="trigger"></div>
+            <ul>
+                <li><a href="@Url.Action("Medicines", "Home")">Medicines</a></li>
+                <li><a href="@Url.Action("Machine", "Home")">Scientific Apparatus</a></li>
+                <li><a href="@Url.Action("Education", "Home")">Education</a></li>
+                <li><a href="@Url.Action("ContactUs", "Home")">FeedBack</a></li>
+                <li><a href="@Url.Action("AboutUs", "Home")">About Us</a></li>
+            </ul>
+        </div>
+        <!-- / container -->
+    </nav>
+   
+    <!-- / navigation -->
+  @RenderBody();
+    <footer id="footer">
+         
+        <div class="container">
+            <div class="cols">
+                <div class="col">
+                    <h3>Frequently Asked Questions</h3>
+                    <ul>
+                        <li><a href="#">Fusce eget dolor adipiscing </a></li>
+                        <li><a href="#">Posuere nisl eu venenatis gravida</a></li>
+                        <li><a href="#">Morbi dictum ligula mattis</a></li>
+                        <li><a href="#">Etiam diam vel dolor luctus dapibus</a></li>
+                        <li><a href="#">Vestibulum ultrices magna </a></li>
+                    </ul>
+                </div>
+                <div class="col media">
+                    <h3>Social media</h3>
+                    <ul class="social">
+                        <li><a href="#"><span class="ico ico-fb"></span>Facebook</a></li>
+                        <li><a href="#"><span class="ico ico-tw"></span>Twitter</a></li>
+                        <li><a href="#"><span class="ico ico-gp"></span>Google+</a></li>
+                        <li><a href="#"><span class="ico ico-pi"></span>Pinterest</a></li>
+                    </ul>
+                </div>
+                <div class="col contact">
+                    <h3>Contact us</h3>
+                    <p>Providence Clinic.<br>53 Saddar Street<br>Karachi</p>
+                    <p><span class="ico ico-em"></span><a href="#">contact@clinic.com</a></p>
+                    <p><span class="ico ico-ph"></span>()+92) 331 234 567</p>
+                </div>
+                <div class="col newsletter">
+                    <h3>Join our newsletter</h3>
+                    <p>Please fill out the form below to be added to our newsletter mailing list to receive valuable information. We provide our customers with the occasional email filled top to bottom with useful information and exclusive deals</p>
+                    <form action="#">
+                        <input type="text" placeholder="Your email address...">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </div>
+            <p class="copy">Copyright 2019 Providence Clinic. All rights reserved.</p>
+        </div>
+        <!-- / container -->
+    </footer>
+    <!-- / footer -->
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write("<script src='~/js/jquery-1.11.1.min.js'>\x3C/script>")</script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js"></script>
+   
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<clinic_management_by_haris.Models.tbl_inventory>
+
+@{
+    ViewBag.Title = "AllInventory";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>All Itmes in Inventory</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Product Name 
+        </th>
+        <th>
+            Product Type
+        </th>
+        <th>
+            Quantity 
+        </th>
+        <th></th>
+        <th>
+            Expiry DateTime
+        </th>
+        <th>Image</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+   
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_products.pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_products.ptype)
+        </td>
+@using (Html.BeginForm("UpdateInventoryQuantity", "Inventory", FormMethod.Get, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+        <td>
+            <input type="text" name="quantity" id="qty" required max="11" pattern="[0-9]{0,11}" value="@item.quantity"/>
+            <input type="hidden" name="id" value="@item.id" />
+            <td>
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Update" class="btn btn-primary btn-block" />
+                </div>
+            </td>
+        </td>}
+        <td>
+          @Html.DisplayFor(modelItem => item.idate)
+        </td>
+        <td>
+            
+            <img  alt="image" src="~/productImages/@item.tbl_products.pimage" height="50" width="50" />
+        </td>
+        <td>
+           @Html.ActionLink("Delete", "DeleteInventory", new { id = item.id })
+        </td>
+    </tr>
+}
+        
+
+</table>

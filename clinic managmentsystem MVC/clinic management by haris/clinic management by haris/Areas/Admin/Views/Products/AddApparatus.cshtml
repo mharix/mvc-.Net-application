@@ -1,0 +1,76 @@
+﻿@model clinic_management_by_haris.Models.tbl_products
+
+@{
+    ViewBag.Title = "AddMedicines";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Sientific Apparatus</h2>
+
+@using (Html.BeginForm("AddApparatus", "Products", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <h5>Apparatus Name:</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+     
+
+        <div class="form-group">
+            <h5>Apparatus Price:</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h5>Apparatus Cost:</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+
+        <div class="form-group">
+            <h5>Apparatus weight:</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pweight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pweight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h5>Apparatus Description:</h5>
+            <div class="col-md-10">
+                <textarea name="description" rows="5" cols="125" maxlength="200"></textarea>
+
+                @Html.ValidationMessageFor(model => model.pdescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h5>Apparatus Image:</h5>
+            <div class="col-md-10">
+                <input type="file" name="file">
+                @Html.ValidationMessageFor(model => model.pimage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    </div>
+}

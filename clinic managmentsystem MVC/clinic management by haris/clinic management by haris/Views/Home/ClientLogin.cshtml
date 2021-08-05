@@ -1,0 +1,58 @@
+﻿@model clinic_management_by_haris.Models.tbl_clientLogin
+
+@{
+    ViewBag.Title = "ClientLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ClientLogin", "Home", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div id="formbody01">
+       
+
+
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form class="contact100-form validate-form">
+                    <span class="contact100-form-title">
+                        Client Login Form
+                    </span>
+
+                  
+                    <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
+                        <span class="label-input100">Email *</span>
+                        <input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+                    </div>
+
+                    <div class="wrap-input100 bg1 rs1-wrap-input100">
+                        <span class="label-input100">Password</span>
+                        <input class="input100" type="password" name="password" placeholder="Enter password">
+                    </div>
+
+
+
+
+
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn">
+
+                            <input type="submit" value="Login" class="contact100-form-btn" />
+
+                        </button>
+                    </div>
+
+                    @Html.ActionLink("clcik here to Regsiter!", "ClientRegister");
+                  
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+}
+

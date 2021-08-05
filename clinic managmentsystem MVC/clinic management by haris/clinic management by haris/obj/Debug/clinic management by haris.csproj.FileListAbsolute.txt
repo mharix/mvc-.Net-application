@@ -1,0 +1,96 @@
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\csc.exe
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\vbc.exe
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\VBCSCompiler.exe
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\clinic management by haris.dll.config
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\clinic management by haris.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\clinic management by haris.pdb
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Antlr3.Runtime.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\EntityFramework.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\EntityFramework.SqlServer.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Newtonsoft.Json.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\PagedList.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\PagedList.Mvc.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Helpers.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Mvc.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Optimization.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Razor.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Deployment.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Razor.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\WebGrease.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Antlr3.Runtime.pdb
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\EntityFramework.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\EntityFramework.SqlServer.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\Newtonsoft.Json.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\PagedList.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\PagedList.Mvc.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Optimization.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Razor.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Deployment.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Razor.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Helpers.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\bin\System.Web.Mvc.xml
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\obj\Debug\clinic management by haris.csprojResolveAssemblyReference.cache
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\obj\Debug\clinic management by haris.dll
+C:\Users\regin\Documents\clinic rang\after inventory\clinic management by haris\clinic management by haris\obj\Debug\clinic management by haris.pdb
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\csc.exe
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\vbc.exe
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\VBCSCompiler.exe
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\clinic management by haris.dll.config
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\clinic management by haris.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\clinic management by haris.pdb
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Antlr3.Runtime.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\EntityFramework.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\EntityFramework.SqlServer.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Newtonsoft.Json.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\PagedList.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\PagedList.Mvc.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Helpers.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Mvc.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Optimization.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Razor.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Deployment.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Razor.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\WebGrease.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Antlr3.Runtime.pdb
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\EntityFramework.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\EntityFramework.SqlServer.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\Newtonsoft.Json.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\PagedList.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\PagedList.Mvc.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Optimization.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Razor.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Deployment.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Webpages.Razor.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Helpers.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\bin\System.Web.Mvc.xml
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\obj\Debug\clinic management by haris.dll
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\obj\Debug\clinic management by haris.pdb
+C:\Users\regin\Documents\Visual Studio 2015\Projects\clinic management by haris\clinic management by haris\obj\Debug\clinic management by haris.csprojResolveAssemblyReference.cache

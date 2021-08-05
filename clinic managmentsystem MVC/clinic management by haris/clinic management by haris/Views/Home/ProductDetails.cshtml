@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="body">
+    <div class="container">
+        <div id="content" class="full">
+            <div class="product">
+                <div class="image">
+                    <img  alt="image" src="~/productImages/@ViewBag.image" alt="">
+                </div>
+                <div class="details">
+                    <h1>@ViewBag.name</h1>
+                    <h4>Rs @ViewBag.price</h4>
+                    <div class="entry">
+                        <p></p>
+                        <div class="tabs">
+                            <div class="nav">
+                                <ul>
+                                    <li class="active"><a href="#desc">Description</a></li>
+                                    <li><a href="#spec">Product code</a></li>
+                                    <li><a href="#ret">Product Type</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-content active" id="desc">
+                                <p>@ViewBag.description</p>
+                            </div>
+                            <div class="tab-content" id="spec">
+                                <p>@ViewBag.code</p>
+                            </div>
+                            <div class="tab-content" id="ret">
+                                <p>@ViewBag.type</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <label>Quantity: @ViewBag.quantity</label>
+                        <a href="@Url.Action("AddToCart", "Order",new { id=@ViewBag.itemid,qty=1})" class="btn-grey">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / content -->
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->

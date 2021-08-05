@@ -1,0 +1,129 @@
+﻿@model IEnumerable<clinic_management_by_haris.Models.tbl_inventory>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="slider">
+    <ul>
+
+        <li class="purple" style="background-image: url(../../images/wokrshop01.png)">
+          
+        </li>
+        <li class="yellow" style="background-image: url(../../images/workshop0001.png)">
+           
+        </li>
+        <li class="purple" style="background-image: url(../../images/workshop00.jpg)">
+           
+        </li>
+        <li class="yellow" style="background-image: url(../../images/holo.jpg)">
+         
+        </li>
+    </ul>
+</div>
+<!-- / body -->
+<div id="body">
+    <div class="container">
+
+        <div class="last-products">
+            <h2>Last added Medicines</h2>
+            <section class="products">
+                @{int count = 0; }
+       @foreach (var item in Model.ToList().OrderByDescending(item => item.id))
+       {
+           DateTime today = DateTime.Now;
+           DateTime productDate = DateTime.Parse(item.idate.ToString());
+           if (DateTime.Compare(productDate, today) > 0 && item.quantity > 0 && count <=10 && item.tbl_products.ptype == "Liquid" || item.tbl_products.ptype == "tablet" || item.tbl_products.ptype == "injection" || item.tbl_products.ptype == "capsule")
+           {
+               count++;
+
+
+
+<article>
+
+
+    <a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">
+        <img  alt="image" src="~/productImages/@item.tbl_products.pimage" alt="" width="85px" height="85px">
+    </a>
+    <h4><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">@item.tbl_products.pname</a></h4>
+    <h3><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">Rs @item.tbl_products.price</a></h3>
+    <a href="@Url.Action("AddToCart", "Order",new { id=@item.id,qty=1})" class="btn-add">Add to cart</a>
+        </article>
+           }
+       }
+
+            </section>
+        </div>
+
+
+        <div class="last-products">
+            <h2>Last added Sientific Apparatus</h2>
+            <section class="products">
+                @{int count02 = 0; }
+                @foreach (var item in Model.OrderByDescending(item => item.id))
+                {
+                    DateTime today = DateTime.Now;
+                    DateTime productDate = DateTime.Parse(item.idate.ToString());
+                    if (DateTime.Compare(productDate, today) > 0 && item.quantity > 0 && count02 <= 10 && item.tbl_products.ptype == "apparatus")
+                    {
+                        count02++;
+
+
+
+                        <article>
+
+
+
+                            <a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">
+                                <img  alt="image" src="~/productImages/@item.tbl_products.pimage" alt="" width="85px" height="85px">
+                            </a>
+                            <h4><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">@item.tbl_products.pname</a></h4>
+                            <h3><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">Rs @item.tbl_products.price</a></h3>
+                            <a href="@Url.Action("AddToCart", "Order",new { id=@item.id,qty=1})" class="btn-add">Add to cart</a>
+                        </article>
+                    }
+                }
+
+            </section>
+        </div>
+
+
+
+        <div class="last-products" >
+            <h2>Last added Events</h2>
+            <section class="products" >
+                @{int count03 = 0; }
+                @foreach (var item in Model.OrderByDescending(item => item.id))
+                {
+                    DateTime today = DateTime.Now;
+                    DateTime productDate = DateTime.Parse(item.idate.ToString());
+                    if (DateTime.Compare(productDate, today) > 0 && item.quantity > 0 && count03 <= 10 && item.tbl_products.ptype == "Lecture" || item.tbl_products.ptype == "Seminar" || item.tbl_products.ptype == "Paractical" )
+                    {
+                        count03++;
+
+
+
+                        <article style="height:400px;">
+
+
+
+                            <a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">
+                                <img  alt="image" src="~/productImages/@item.tbl_products.pimage" alt="" width="85px" height="85px"></a>
+                    <h4><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">@item.tbl_products.pname</a></h4>
+                                <h3><a href="@Url.Action("ProductDetails", "Home",new { id=@item.id})">Rs @item.tbl_products.price</a></h3>
+                                <a href="@Url.Action("AddToCart", "Order",new { id=@item.id,qty=1})" class="btn-add">Add to cart</a>
+
+
+</article>
+                    }
+                }
+
+            </section>
+        </div>
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->

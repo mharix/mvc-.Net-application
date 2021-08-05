@@ -1,0 +1,144 @@
+﻿@model IEnumerable<clinic_management_by_haris.Models.tbl_orders>
+
+@{
+    ViewBag.Title = "Medtransactions";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Scientific Application Transactions/Orders</h2>
+
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-chart-area"></i>
+        Scientific Application Transactions
+    </div>
+    <div class="card-body">
+        <!--chart here-->
+        <table>
+            <tr>
+                 
+                <td><div id="profitchart"></div></td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Item
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            total
+        </th>
+        <th>
+            Date
+        </th>
+
+
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.tbl_products.ptype == "apparatus"  )
+        {
+            <tr>
+                <td>
+                    @item.tbl_clientLogin.name
+                </td>
+                <td>
+                    @item.tbl_products.pname
+                </td>
+                <td>
+                    @item.quantity
+                </td>
+                <td>
+                    @item.tbl_products.price
+                </td>
+                <td>
+                    @{int total = ((int)@item.tbl_products.price) * ((int)@item.quantity); }
+                    @total
+                </td>
+                <td>
+                    @item.orderdate
+                </td>
+            </tr>
+                            }
+                        }
+
+</table>
+
+
+
+@{int  apparatus = 0, price = 0, cost = 0, qty = 0;}
+@foreach (var item in Model)
+{
+
+
+    if (item.tbl_products.ptype == "apparatus" )
+    {
+        cost += ((Int32)item.tbl_products.cost);
+        price += ((Int32)item.tbl_products.price);
+        qty += ((Int32)item.quantity);
+         
+
+    }
+   
+}
+@{
+    int rev = 0, exp = 0, profit = 0;
+    exp = cost * qty;
+    rev = price * qty;
+    profit = rev - exp;
+}
+
+
+
+<script src="~/js/googlechart.js"></script>
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+ 
+
+    var profitdata = google.visualization.arrayToDataTable([
+['Task', 'profit'],
+['Expense', @exp ],
+['Revenue', @rev],
+['Profit', @profit],
+
+
+    ]);
+
+  // Optional; add a title and set the width and height of the chart
+     
+    var profitoptions = { 'title': 'Expense and Revenue Percentage(no graph means no record or negative)', 'width': 550, 'height': 400 };
+
+  // Display the chart inside the <div> element with id="piechart" 
+    var profitchart = new google.visualization.PieChart(document.getElementById('profitchart'));
+ 
+    profitchart.draw(profitdata, profitoptions);
+}
+</script>

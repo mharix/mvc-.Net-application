@@ -1,0 +1,65 @@
+﻿@model IEnumerable<clinic_management_by_haris.Models.tbl_products>
+
+@{
+    ViewBag.Title = "AllMedicines";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>All Educational Events</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Cost
+        </th>
+        
+        
+        <th>
+            Description
+        </th>
+        <th>
+            Image
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ptype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cost)
+            </td>
+           
+            <td>
+                <pre>@Html.DisplayFor(modelItem => item.pdescription)</pre>
+            </td>
+            <td>
+                <img  alt="image" src="~/productImages/@item.pimage" height="200" width="200" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEducation", new { id = item.pid }) |
+                @Html.ActionLink("Delete", "DeleteEducation", new { id = item.pid })
+
+            </td>
+        </tr>
+    }
+
+</table>
